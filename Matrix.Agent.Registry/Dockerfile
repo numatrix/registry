@@ -14,7 +14,7 @@ COPY Matrix.Agent.Registry.Model/Matrix.Agent.Registry.Model.csproj Matrix.Agent
 COPY . .
 
 # restore
-RUN dotnet restore "Matrix.Agent.Registry/Matrix.Agent.Registry.csproj"
+RUN dotnet restore "Matrix.Agent.Registry/Matrix.Agent.Registry.csproj" -s http://nuget.matrix.paramg.com:8888/v3/index.json
 
 # build
 WORKDIR /src/Matrix.Agent.Registry
